@@ -16,7 +16,9 @@ indices:
         value: attribute(el, "content")
   events:
     include:
-      - '/events/**/**'
+      - '/events/**'
+    exclude:
+      - '/events'
     target: /events-index.json
     properties:
       title:

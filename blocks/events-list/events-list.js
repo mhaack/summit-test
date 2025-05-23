@@ -8,7 +8,8 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 async function fetchEvents() {
   try {
     const events = await ffetch('/events-index.json').all();
-    return events || [];
+    const filtered = events.filter((item) => item.path !== '/events');
+    return filtered || [];
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Error loading events:', error);
